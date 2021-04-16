@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS DANIEL</title>
+    <link rel="stylesheet" href="uts.css">
+</head>
+<body>
+    <header>
+        <div class ="header-logo">
+            Astra Honda Motor
+        </div>
+        <div class="header-nav">
+                <ul>
+                    <li>Promosi</li>
+                    <li>After Sales</li>
+                    <li>Pricelist</li>
+                    <li>Produk</li>
+                    <li>Home</li>
+                </ul>
+
+        </div>
+    </header>
+    <main>
+        <div class="main-containeer">
+            <h1><center>HALO SOBAT HONDA<span></span><center></h1>
+            <h2><center>PILIH KENDARAAN ANDA<center></h2>
+        </div>
+        <div class="contents">
+            <h3 class="section-title">Tipe Motor</h3>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="GENIO.png" alt="NEW GENIO 110">
+                </div>
+                <p>NEW GENIO 110</p>
+                <p>MULAI DARI 15.999.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="PCX.jpeg" alt="ALL NEW PCX">
+                </div>
+                <p>ALL NEW PCX 160</p>
+                <p>Mulai dari 29.999.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="BEAT.jpg" alt="NEW BEAT">  
+                </div>
+                <p>NEW BEAT</p>
+                <p>Mulai Dari 14.999.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="cbr 150.png" alt="ALL NEW CBR 150">
+                    
+                </div>
+                <p bold>ALL NEW CBR 150</p>
+                <p>Mulai Dari 34.599.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="CBR 250.jpg" alt="CBR 250">
+                    
+                </div>
+                <p>CBR 250</p>
+                <p>Mulai Dari 62.490.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="CRF 150.jpg" alt="CRF 150">
+                    
+                </div>
+                <p>CRF 150</p>
+                <p>Mulai Dari 34.500.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="forza" alt="forza">
+                </div>
+                <p>Forza 250</p>
+                <p>Mulai dari 64.999.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="sonic" alt="sonic">
+                </div>
+                <p>NEW SONIC 150</p>
+                <p>Mulai dari 23.499.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="MONKEY" alt="MONKEY">
+                </div>
+                <p> NEW MONKEY</p>
+                <p>Mulai dari 69.999.000</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image pink">
+                    <img src="SUPER" alt="SUPER">
+                </div>
+                <p>SUPER CUB 125</p>
+                <p>Mulai dari 49.700.000</p>
+            </div>
+
+        </div>
+        <div class="contact">
+            <h3 class="section-title">Hubungi Kami </h3>
+            <form onsubmit="savemassage()">
+                <p>Nama (wajib diisi) *</p>
+                <input type="nama" name="Nama" id="nama" placeholder="Masukkan Nama Anda">
+                <p>Email (wajib diisi) *</p>
+                <input type="email" name="Email" id="email" placeholder="Masukkan Email Anda">
+                <p>Pesan (wajib diisi) *</p>
+                <input type="text" name="" id="pesan" placeholder="Masukkan Pesan Anda">
+                <p class="txt-red">* Bidang wajib diisi</p>
+                <button type="submit" class="contact-submit"> Kirim </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class = "footer-logo">Honda Astra Motor</div>
+        <div class = "footer-nav">
+            <ul>
+                <li>Tentang</li>
+                <li>Lokasi Dealer</li>
+                <li>Hubungi Kami</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        let massage=[];
+        const savemassage = () =>{
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let pesan = document.getElementById("pesan").value;
+
+            let user = {nama: nama,email: email,pesan: pesan};
+            let sendPesan = localStorage.getItem("pesan");
+
+            if(sendPesan != null){
+                massage = JSON.parse(sendPesan);
+            }
+            massage.push(user);
+            localStorage.setItem("pesan", JSON.stringify(massage));
+        }
+    </script>
+    
+</body>
+</html>
